@@ -6,6 +6,7 @@ import ErrorPage from './Components/ErrorPages/ErrorPage';
 import Home from './Components/Home/Home';
 import Root from './Components/Root/Root';
 import './index.css';
+import PageToRead from './Components/PageToRead/PageToRead';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/PageToRead',
+        element: <PageToRead/>,
       },
       {
         path: 'books/:bookId',
