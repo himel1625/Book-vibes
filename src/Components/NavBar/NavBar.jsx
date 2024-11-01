@@ -43,13 +43,13 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Book Vibes</a>
+        <a className="btn btn-ghost text-3xl font-extrabold">Book Vibes</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn  bg-sky-500 font-bold">Login</a>
+      <div className="navbar-end font-bold text-xl ">
+      <NavLink to="/Login">login</NavLink>
       </div>
     </div>
   );

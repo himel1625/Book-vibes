@@ -5,6 +5,7 @@ import BookDetail from './Components/BookDetails/BookDetail';
 import ErrorPage from './Components/ErrorPages/ErrorPage';
 import Home from './Components/Home/Home';
 import ListedBook from './Components/ListedBooks/ListedBook';
+import Login from './Components/Login/Login';
 import PageToRead from './Components/PageToRead/PageToRead';
 import Root from './Components/Root/Root';
 import './index.css';
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/PageToRead',
         element: <PageToRead />,
+      },
+      {
+        path: '/Login',
+        element: <Login />,
       },
       {
         path: '/listedBooks',
