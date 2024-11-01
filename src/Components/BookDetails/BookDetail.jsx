@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addToStoredReadList } from '../../Utility/DataBase';
 
 const BookDetail = () => {
   const { bookId } = useParams();
-  console.log(bookId);
   const data = useLoaderData();
   const id = parseInt(bookId);
   const book = data.find((book) => book.bookId === id);
@@ -19,6 +19,11 @@ const BookDetail = () => {
     yearOfPublishing,
     rating,
   } = book;
+
+  const handleMarkAsRead = (id) => {
+    addToStoredReadList(id);
+  };
+  // const handleAddToWishlist = () => {};
   return (
     <>
       <div className="border border-gray-300 rounded-xl p-6 max-w-4xl mx-auto flex flex-col md:flex-row gap-6">
@@ -69,11 +74,17 @@ const BookDetail = () => {
             </div>
           </div>
           <div className="flex gap-4">
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-              Read
+            <button
+              onClick={() => handleMarkAsRead(bookId)}
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            >
+              Mark As Read
             </button>
-            <button className="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition">
-              Wishlist
+            <button
+              // onClick={handleAddToWishlist}
+              className="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition"
+            >
+              Add To Wishlist
             </button>
           </div>
         </div>

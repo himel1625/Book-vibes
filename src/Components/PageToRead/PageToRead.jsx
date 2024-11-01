@@ -3,14 +3,14 @@ import { Bar, BarChart, XAxis, YAxis, Cell } from 'recharts';
 
 const PageToRead = () => {
   const data = [
-    { name: 'Page A', uv: 4.5, color: '#FF5733' }, // Red
+    { name: 'Page A', uv: 5.5, color: '#FF5733' }, // Red
     { name: 'Page B', uv: 4.8, color: '#33FF57' }, // Green
-    { name: 'Page C', uv: 4.6, color: '#3357FF' }, // Blue
-    { name: 'Page D', uv: 4.3, color: '#FF33A1' }, // Pink
-    { name: 'Page E', uv: 4.7, color: '#F3FF33' }, // Yellow
-    { name: 'Page F', uv: 4.9, color: '#33FFF5' }, // Cyan
-    { name: 'Page G', uv: 4.8, color: '#FF33D4' }, // Magenta
-    { name: 'Page H', uv: 4.6, color: '#FF8C00' }, // Dark Orange
+    { name: 'Page C', uv: 8.6, color: '#3357FF' }, // Blue
+    { name: 'Page D', uv: 7.3, color: '#FF33A1' }, // Pink
+    { name: 'Page E', uv: 7.7, color: '#F3FF33' }, // Yellow
+    { name: 'Page F', uv: 9.9, color: '#33FFF5' }, // Cyan
+    { name: 'Page G', uv: 2.8, color: '#FF33D4' }, // Magenta
+    { name: 'Page H', uv: 10.6, color: '#FF8C00' }, // Dark Orange
   ];
 
   const getPath = (x, y, width, height) =>
