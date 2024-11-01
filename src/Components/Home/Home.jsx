@@ -1,7 +1,11 @@
+import Books from '../Books/Books';
+import Hero from '../Hero/Hero';
+
 const Home = () => {
   return (
     <>
-      <p>this is home page</p>
+      <Hero></Hero>
+      <Books></Books>
     </>
   );
 };

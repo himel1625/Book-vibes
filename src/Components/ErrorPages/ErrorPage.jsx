@@ -24,11 +24,7 @@ const ErrorPage = () => {
           </button>
         </div>
       </div>
-      <img
-        src="https://via.placeholder.com/300x200"
-        alt="Error Illustration"
-        className="mt-8"
-      />
+      
     </div>
   );
 };
