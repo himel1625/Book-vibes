@@ -1,7 +1,10 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
-import { addToStoredReadList } from '../../Utility/DataBase';
-
+import { BiLogOutCircle } from 'react-icons/bi';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import {
+  addToStoredReadList,
+  addToStoredWishList,
+} from '../../Utility/DataBase';
 const BookDetail = () => {
   const { bookId } = useParams();
   const data = useLoaderData();
@@ -19,11 +22,17 @@ const BookDetail = () => {
     yearOfPublishing,
     rating,
   } = book;
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate(-1);
+  };
   const handleMarkAsRead = (id) => {
     addToStoredReadList(id);
   };
-  // const handleAddToWishlist = () => {};
+  const handleAddToWishlist = (id) => {
+    addToStoredWishList(id);
+  };
   return (
     <>
       <div className="border border-gray-300 rounded-xl p-6 max-w-4xl mx-auto flex flex-col md:flex-row gap-6">
@@ -73,7 +82,7 @@ const BookDetail = () => {
               </p>
             </div>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <button
               onClick={() => handleMarkAsRead(bookId)}
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
@@ -81,11 +90,15 @@ const BookDetail = () => {
               Mark As Read
             </button>
             <button
-              // onClick={handleAddToWishlist}
+              onClick={() => handleAddToWishlist(bookId)}
               className="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition"
             >
               Add To Wishlist
             </button>
+            <div onClick={handleClick} className="text-4xl font-bold">
+              {' '}
+              <BiLogOutCircle />
+            </div>
           </div>
         </div>
       </div>
